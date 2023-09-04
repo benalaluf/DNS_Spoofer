@@ -1,0 +1,2 @@
+# DNSSpoofer
+for pranks ;)
