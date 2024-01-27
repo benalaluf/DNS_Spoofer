@@ -1,2 +1,2 @@
 # DNS_Spoofer
-for pranks ;)
+for pranks ;) in devleopment...
